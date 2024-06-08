@@ -1,0 +1,40 @@
+.container {
+  display: grid;
+  max-width: 100%;
+  padding-inline: 200px;
+  padding-block: 100px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 2;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.2s;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+}
+
+.title {
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 1.25rem;
+  margin: 0 0 20px 0;
+}
+
+.author {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+}
