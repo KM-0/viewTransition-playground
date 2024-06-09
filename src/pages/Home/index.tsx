@@ -1,19 +1,20 @@
 import { POSTS } from "../../data/posts";
+import { useTransitionRouterPush } from "../../hooks/useViewTransition";
 import styles from "./styles.module.css";
-import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const navigate = useNavigate();
+  const { startViewTransition } = useTransitionRouterPush();
 
   return (
     <div className={styles.container}>
       {POSTS.map((post) => {
         return (
           <div
-            className={styles.card}
+            className={`${styles.card} transition-title`}
             onClick={() => {
-              navigate(`post/${post.id}`);
+              startViewTransition(`post/${post.id}`);
             }}
+            key={post.id}
           >
             <h2 className={styles.title}>{post.title}</h2>
             <p className={styles.author}>By {post.author}</p>
