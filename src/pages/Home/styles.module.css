@@ -17,14 +17,15 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   transition: transform 0.2s;
+  cursor: pointer;
+  view-transition-name: var(--target-transition-name);
   &:hover {
-    cursor: pointer;
-    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.18);
   }
-  view-transition-name: transition-target;
 }
 
 .title {
+  view-transition-name: var(--target-transition-name2);
   overflow: hidden;
   display: -webkit-box;
   text-overflow: ellipsis;

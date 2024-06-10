@@ -3,12 +3,13 @@
   flex-direction: column;
   padding-inline: 600px;
   padding-block: 100px;
-  view-transition-name: transition-target;
+  view-transition-name: var(--target-transition-name);
 }
 
 .title {
   font-size: 2rem;
   margin-bottom: 10px;
+  view-transition-name: var(--target-transition-name2);
 }
 
 .author {
@@ -23,7 +24,5 @@
 }
 
 .back {
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 }

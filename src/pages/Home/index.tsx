@@ -10,13 +10,19 @@ const Home = () => {
       {POSTS.map((post) => {
         return (
           <div
-            className={`${styles.card} transition-title`}
+            className={styles.card}
             onClick={() => {
               startViewTransition(`post/${post.id}`);
             }}
             key={post.id}
+            style={{ "--target-transition-name": `post-${post.id}` }}
           >
-            <h2 className={styles.title}>{post.title}</h2>
+            <h2
+              className={styles.title}
+              style={{ "--target-transition-name2": `title-${post.id}` }}
+            >
+              {post.title}
+            </h2>
             <p className={styles.author}>By {post.author}</p>
           </div>
         );

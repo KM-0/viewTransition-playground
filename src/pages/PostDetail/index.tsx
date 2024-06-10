@@ -9,14 +9,23 @@ const PostDetail = () => {
   if (!id) return <div>error!!</div>;
 
   const post = POSTS.find((post) => post.id === parseInt(id));
+  if (!post) return <p>error!!</p>;
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{ "--target-transition-name": `post-${post.id}` }}
+    >
       <div className={styles.back} onClick={() => startViewTransition("/")}>
         Go Back
       </div>
-      <h1 className={`${styles.title} transition-title`}>{post?.title}</h1>
-      <p className={styles.author}>By {post?.author}</p>
-      <div className={styles.content}>{post?.body}</div>
+      <h1
+        className={`${styles.title} transition-title`}
+        style={{ "--target-transition-name2": `title-${post.id}` }}
+      >
+        {post.title}
+      </h1>
+      <p className={styles.author}>By {post.author}</p>
+      <div className={styles.content}>{post.body}</div>
     </div>
   );
 };
