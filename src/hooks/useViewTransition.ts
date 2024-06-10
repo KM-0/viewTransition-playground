@@ -1,10 +1,13 @@
+import { flushSync } from "react-dom";
 import { useNavigate } from "react-router-dom";
 
 export const useTransitionRouterPush = () => {
-  const navigation = useNavigate();
+  const navigate = useNavigate();
   const startViewTransition = (to: string) =>
-    document.startViewTransition(async () => {
-      navigation(to);
+    document.startViewTransition(() => {
+      flushSync(() => {
+        navigate(to);
+      });
     });
 
   return { startViewTransition };

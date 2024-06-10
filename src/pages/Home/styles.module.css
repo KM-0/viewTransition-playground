@@ -21,6 +21,7 @@
     cursor: pointer;
     transform: scale(1.05);
   }
+  view-transition-name: transition-target;
 }
 
 .title {

@@ -3,6 +3,7 @@
   flex-direction: column;
   padding-inline: 600px;
   padding-block: 100px;
+  view-transition-name: transition-target;
 }
 
 .title {
