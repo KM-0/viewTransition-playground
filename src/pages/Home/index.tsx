@@ -9,7 +9,9 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <h1>Home Page</h1>
-      <Link to={"/page2"}>Go to Page 2</Link>
+      <Link to={"/page2"}>
+        <a>Go to Page 2</a>
+      </Link>
     </div>
   );
 };
