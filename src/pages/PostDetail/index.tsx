@@ -1,12 +1,11 @@
 import { useParams } from "react-router-dom";
 import { POSTS } from "../../data/posts";
 import styles from "./styles.module.css";
-import { useTransitionRouterPush } from "../../hooks/useViewTransition";
+// import { useTransitionRouterPush } from "../../hooks/useViewTransition";
 
 const PostDetail = () => {
-  console.log("test");
   const { id } = useParams();
-  const { startViewTransition } = useTransitionRouterPush();
+  // const { startViewTransition } = useTransitionRouterPush();
   if (!id) return <div>error!!</div>;
 
   const post = POSTS.find((post) => post.id === parseInt(id));
@@ -14,14 +13,14 @@ const PostDetail = () => {
   return (
     <div
       className={styles.container}
-      style={{ "--target-transition-name": `post-${post.id}` }}
+      // style={{ "--target-transition-name": `post-${post.id}` }}
     >
-      <div className={styles.back} onClick={() => startViewTransition("/")}>
+      <a className={styles.back} href={"/"}>
         Go Back
-      </div>
+      </a>
       <h1
         className={`${styles.title} transition-title`}
-        style={{ "--target-transition-name2": `title-${post.id}` }}
+        // style={{ "--target-transition-name2": `title-${post.id}` }}
       >
         {post.title}
       </h1>
