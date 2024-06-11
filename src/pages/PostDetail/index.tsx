@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 import { useTransitionRouterPush } from "../../hooks/useViewTransition";
 
 const PostDetail = () => {
-  console.log("test");
+  console.log("test:fix");
   const { id } = useParams();
   const { startViewTransition } = useTransitionRouterPush();
   if (!id) return <div>error!!</div>;
