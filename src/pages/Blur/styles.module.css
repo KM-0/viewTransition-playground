@@ -1,0 +1,57 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-image: url(https://picsum.photos/seed/picsum/1200/600);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.box {
+  padding-inline: 60px;
+  padding-block: 20px;
+  backdrop-filter: blur(50px);
+  mask-image: linear-gradient(
+      to top,
+      rgb(0 0 0 / 100%) 0%,
+      rgb(0 0 0 / 95%) 95%,
+      rgb(0 0 0 / 0%) 100%
+    ),
+    linear-gradient(
+      to left,
+      rgb(0 0 0 / 100%) 0%,
+      rgb(0 0 0 / 95%) 95%,
+      rgb(0 0 0 / 0%) 100%
+    ),
+    linear-gradient(
+      to right,
+      rgb(0 0 0 / 100%) 0%,
+      rgb(0 0 0 / 95%) 95%,
+      rgb(0 0 0 / 0%) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgb(0 0 0 / 100%) 0%,
+      rgb(0 0 0 / 95%) 95%,
+      rgb(0 0 0 / 0%) 100%
+    );
+  mask-composite: intersect;
+}
+
+.text {
+  font-size: 70px;
+  color: white;
+  font-weight: bold;
+}
